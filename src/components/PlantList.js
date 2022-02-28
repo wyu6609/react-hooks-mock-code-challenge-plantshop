@@ -10,10 +10,21 @@ function PlantList({ plantList, setPlantList }) {
       .then((resp) => resp.json())
       .then((data) => setPlantList(data));
   }
+
+  const onDelete = (deletedObj) => {
+    const updatedList = plantList.filter((el) => {
+      return el.id !== deletedObj.id;
+    });
+    console.log();
+    setPlantList(updatedList);
+  };
+
   return (
     <ul className="cards">
       {plantList.map((plantItem) => {
-        return <PlantCard key={uuid()} plantItem={plantItem} />;
+        return (
+          <PlantCard key={uuid()} plantItem={plantItem} onDelete={onDelete} />
+        );
       })}
     </ul>
   );

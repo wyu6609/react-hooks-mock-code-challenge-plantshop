@@ -8,7 +8,7 @@ function PlantPage() {
   const [plantList, setPlantList] = useState([]);
   //set searchInputText
   const [searchInputText, setSearchInputText] = useState("");
-
+  const [newPlantList, setNewPlantList] = useState([]);
   //on Add new plant object
   const onAddNewObj = (newObj) => {
     setPlantList([...plantList, newObj]);
