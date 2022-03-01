@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PlantCard from "./PlantCard";
 import { v4 as uuid } from "uuid";
-function PlantList({ plantList, setPlantList }) {
+function PlantList({ plantList, setPlantList, updatedPlantList }) {
   useEffect(() => {
     fetchAPI();
   }, []);
